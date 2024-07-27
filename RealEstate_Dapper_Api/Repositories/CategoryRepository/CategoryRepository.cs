@@ -38,7 +38,7 @@ namespace RealEstate_Dapper_UI.Repositories.CategoryRepository
         {
             string query = "Delete from Category Where CategoryID = @categoryID";
             var parameters = new DynamicParameters();
-            parameters.Add("categoryID", id);
+            parameters.Add("@categoryID", id);
             using (var connection = _context.CreateConnection())
             { 
                 await connection.ExecuteAsync(query, parameters);
